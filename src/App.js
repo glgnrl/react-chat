@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux'
 import './App.css';
+import MessageList from './components/MessageList';
+import RoomList from './components/RoomList';
+import SendMessageForm from './components/SendMessageForm';
+import NewRoomForm from './components/NewRoomForm';
+import InsertUser from './components/InsertUser';
+
+import store from './store'
+
 
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <RoomList />
+        <MessageList />
+        <SendMessageForm />        
+        <InsertUser />
+        <NewRoomForm />
       </div>
+      </Provider>
     );
   }
 }
 
 export default App;
+
