@@ -19,14 +19,15 @@ class RoomList extends Component {
     console.log('group', this.props.groups)
     return (
       <div className="room-list">
-        <div><h2>Room List</h2></div>
+          <h2>Room List</h2>
+          <div className="content-room">
           {
             this.props.groups.map(item => {
-              return <button className="btnGroupList"key={item.id} style={currentGroup.id ===item.id ? { backgroundColor: '#f1f1f1' } :{}}
+              return <button className="btnGroupList"key={item.id} style={currentGroup.id === item.id ? { backgroundColor: '#3f4144' } :{}}
               onClick={this.handleGroupItem.bind(this, item)}>{item.title}</button>
             })
           }
-          
+          </div>
       </div>
     )
   }
